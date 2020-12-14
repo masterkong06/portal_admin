@@ -31,7 +31,28 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        
+        <h1>All Patients</h1>
+        <table>
+          <tbody>
+            {
+              this.state.patients.map(patient => {
+                return (
+                  <tr>
+                    <td key = { patient._id}>{patient.firstName}</td>
+                    <td key = { patient._id}>{patient.lastName}</td>
+                    <td key = { patient._id}>{patient.address}</td>
+                    <td key = { patient._id}>{patient.city}</td>
+                    <td key = { patient._id}>{patient.state}</td>
+                    <td key = { patient._id}>{patient.zip}</td>
+                    <td key = { patient._id}>{patient.phone}</td>
+                    <td key = { patient._id}>{patient.email}</td>
+                    <td key = { patient._id}>{patient.date_created}</td>
+                  </tr>
+                )
+              })
+            }
+          </tbody>
+        </table>
       </div>
     )
   }
